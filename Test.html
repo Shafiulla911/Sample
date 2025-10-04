@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="register-container">
+    <h2>Register</h2>
+    <form id="registerForm">
+        <div class="error" id="errorMsg"></div>
+
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+        <button type="submit">Register</button>
+        <div class="success" id="successMsg"></div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form from submitting
+
+        // Clear previous messages
+        document.getElementById('errorMsg').textContent = '';
+        document.getElementById('successMsg').textContent = '';
+
+        // Get form values
+        const username = document.getElementById('username').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        // Basic validation
+        if (!username || !email || !password || !confirmPassword) {
+            document.getElementById('errorMsg').textContent = 'Please fill in all fields.';
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            document.getElementById('errorMsg').textContent = 'Passwords do not match.';
+            return;
+        }
+
+        if (password.length < 6) {
+            document.getElementById('errorMsg').textContent = 'Password must be at least 6 characters.';
+            return;
+        }
+
+        // Simulate success
+        document.getElementById('successMsg').textContent = 'Registration successful!';
+        document.getElementById('registerForm').reset();
+    });
+</script>
+
+</body>
+</html>
