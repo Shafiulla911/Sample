@@ -1,0 +1,96 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    background-position: center ;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 100vh;
+}
+
+div {
+    background-image: url("https://www.vecteezy.com/vector-art/7622529-abstract-template-3d-arrow-stripes-vibrant-color-background-with-lighting-effect-technology-style");
+}
+
+/* Container */
+.form-container {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    padding: 40px 30px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    width: 200%;
+    max-width: 600px;
+}
+
+/* Form title */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Input groups */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #444;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5A67D8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #434190;
+}
+
+/* Message */
+.message {
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: red;
+}
